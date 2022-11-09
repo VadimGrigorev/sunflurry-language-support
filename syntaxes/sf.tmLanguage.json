@@ -1,0 +1,85 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SunFlurry",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#dates"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#attributes"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control",
+				"match": "(?i)\\b(if|then|else|elseif|endif|while|for|do|enddo|var|export|byref)\\b"
+			},
+			{
+				"name": "keyword.other",
+				"match": "(?i)\\b(continue|exit|break|not)\\b"
+			},
+			{
+				"name": "keyword.other.unit",
+				"match": "(?i)\\b(function|endfunction)\\b"
+			}]
+		},
+		"strings": {
+			"name":"string.quoted.double",
+			"begin": "\"",
+			"end": "\""
+		},
+		"dates": {
+			"name":"string.quoted.single",
+			"begin": "'",
+			"end": "'"
+		},
+		"comments": {
+			"patterns":[{
+				"name":"comment.line.double-slash",
+				"match":"\/\/.*"
+			},{
+				"name":"comment.block",
+				"begin":"{",
+				"end":"}"
+			},{
+				"name":"comment.block.documentation",
+				"begin":"'''",
+				"end":"'''"
+			}]
+		},
+		"variables": {
+			"patterns":[{
+				"name": "entity.name.class",
+				"match": "(?i)(ref|doc|enum|jour|stor|dbvar|struct|query|tempdb|logs)(?=\\.)"
+			},{
+				"name": "entity.name.tag",
+				"match": "(?i)(list|text|form)(?=\\.)"
+			}]
+		},
+		"functions":{
+			"name": "entity.name.function",
+			"match": "(?i)([a-zа-я_-]+)(?=\\()"
+		},
+		"attributes":{
+			"name": "entity.other.attribute-name",
+			"match": "(?i)(?<=\\.)([a-zа-я_-]+)"
+		}
+	},
+	"scopeName": "text.randomstring.sf"
+}
