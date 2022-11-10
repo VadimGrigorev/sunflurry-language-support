@@ -74,11 +74,11 @@
 		},
 		"functions":{
 			"name": "entity.name.function",
-			"match": "(?i)([a-zа-я_-]+)(?=\\()"
+			"match": "(?i)([a-zа-я_0-9-]+)(?=\\()"
 		},
 		"attributes":{
 			"name": "entity.other.attribute-name",
-			"match": "(?i)(?<=\\.)([a-zа-я_-]+)"
+			"match": "(?i)(?<=\\.)([a-zа-я0-9_-]+)"
 		}
 	},
 	"scopeName": "text.randomstring.sf"
